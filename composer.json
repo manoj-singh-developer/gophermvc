@@ -1,0 +1,11 @@
+{
+	"autoload": {
+
+		"classmap": ["app/core"],
+		
+		"psr-4": {
+			"SMVC\\": "app/lib"
+		}
+	}
+	
+}
