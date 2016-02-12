@@ -11,7 +11,7 @@ switch( $_SERVER['SERVER_NAME'] ){
 	default:
 		
 		$cfg['siteName'] = 'Gopher MVC';			
-		$cfg['base_url'] = 'http://localhost/gophermvc';
+		$cfg['base_url'] = 'http://localhost/gophertest';
 		$cfg['debug'] = true;
 		
 		$cfg['server'] = 'localhost';

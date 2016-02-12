@@ -5,7 +5,7 @@ RewriteEngine On
 
 #The /public line might be suitable on subdomains, it depends on your server and root/public folder location
 #RewriteBase /public
-RewriteBase /gophermvc/public/
+RewriteBase /gophertest/public/
 
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f

@@ -1,6 +1,12 @@
 <?php
 use SMVC\Core\DbConnect;
 use SMVC\Core\Security;
+
+/**
+	
+	A simple no nonscence login controller
+	
+**/	
 	
 class Login extends Controller{
 /***************************************************************************/		
@@ -21,9 +27,7 @@ class Login extends Controller{
 		
 		$this->view('login/loginForm', 
 			array(
-				//'loginData' => $testLogin->outputs,
-				//'LOGIN STATUS' => $testLogin->LoginStatus,
-				//'Session' => $_SESSION,
+
 				'form' => $testLogin->loginForm(),		
 			)
 			);

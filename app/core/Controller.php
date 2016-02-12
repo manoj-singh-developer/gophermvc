@@ -2,7 +2,8 @@
 	
 class Controller {
 /***************************************************************************/	
-	public function model($model){
+	public function model($model)
+	{
 		/**
 			$model is the class required. The format is subfolder.Classname	
 		**/
@@ -24,7 +25,8 @@ class Controller {
 	}
 /***************************************************************************/	
 	//Render the view
-	public function view($view, $data = array() ){//$data from 
+	public function view($view, $data = array() )
+	{
 		require_once '../app/views/'.$view.'.php';
 	}
 /***************************************************************************/	

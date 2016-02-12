@@ -3,15 +3,20 @@
 use SMVC\Core\DbConnect;
 use SMVC\Biometrics\BioController;
 
+/**
+	
+	Example of using the MVC method for returning different types of data. Notice the only difference from returning HTML is that View called processes the $data array and echoes out json,xml, etc 
+	
+**/	
 	
 class Jquery extends Controller
 {
-/***************************************************************************/		
+/********************************************************************************************************************/		
 	public function index()
 	{
 
 	}
-/***************************************************************************/
+/********************************************************************************************************************/		
 	public function getbiometric( $id )
 	{
 		/** Call View and pass values **/
@@ -21,7 +26,7 @@ class Jquery extends Controller
 					)
 				);
 	}		
-/***************************************************************************/
+/********************************************************************************************************************/		
 	public function updateEnviromentSettings( $id = null )
 	{
 		extract($_POST);
@@ -33,7 +38,7 @@ class Jquery extends Controller
 					)
 				);		
 	}
-/***************************************************************************/
+/********************************************************************************************************************/		
 	public function resetSetting( $id = null )
 	{
 		( new AppSettings )->resetSetting( $id );
@@ -44,5 +49,5 @@ class Jquery extends Controller
 					)
 				);		
 	}
-/***************************************************************************/
+/********************************************************************************************************************/		
 }//End class
