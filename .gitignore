@@ -6,7 +6,3 @@ public/.htaccess
 # Folders
 tmp
 cgi-bin
-app/config/config.php
-app/controllers
-app/lib/Examples
-app/views

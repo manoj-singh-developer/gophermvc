@@ -39,6 +39,7 @@ define('DATEFORMAT_FROM_MYSQL','%d/%m/%Y');
 define('DATEFORMAT_PHP_UKDATE','Y-m-d');
 define('TITLE_TAG',( !empty($cfg['siteName'])? $cfg['siteName'] : 'Site name') );
 define('SITE_NAME',( !empty($cfg['siteName'])? $cfg['siteName'] : 'Site name') );
+define('MAILCHIMP_APIKEY', 'a6db84dc204d4720c0c450a0bbac5b4f-us12');
 /**/
 
 define('HOST', $cfg['server'] );
