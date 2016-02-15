@@ -14,10 +14,13 @@ class App extends BaseController{
 		parent::__construct();
 		
 		$url = $this->parseUrl();
-		
-		if( file_exists('../app/controllers/'.$url[0].'.php') )
-		{
-			$this->controller = $url[0];
+	
+	//Controller
+	/**
+		Notice that $url is all in lower case. This prevents issues with some servers treating UpperAndLower case differently	
+	**/	
+		if( file_exists('../app/controllers/'.strtolower( $url[0] ) .'.php') ){
+			$this->controller = strtolower( $url[0] );
 			unset($url[0]);
 			
 		}
@@ -28,15 +31,12 @@ class App extends BaseController{
 		//var_dump($this->controller);
 		
 		//Method
-		if( isset($url[1]) )
-		{
-			if( method_exists($this->controller, $url[1]) )
-			{
+		if( isset($url[1]) ){
+			if( method_exists($this->controller, $url[1]) ){
 				$this->method = $url[1];
 				unset($url[1]);
 			}
 		}
-		
 		//array_values = resets array keys starting at 0
 		$this->params = $url ? array_values($url) : array() ;
 		//$this->params = array( print_r(array_values($url), true) ) ;
@@ -47,8 +47,9 @@ class App extends BaseController{
 /***************************************************************************/	
 	public function parseUrl()
 	{
-		if( isset($_GET['url']) )
-		{	
+		
+		if( isset($_GET['url']) ){
+			
 			//Trim, sanitize and explode URL
 			return $url = explode( '/', filter_var( rtrim($_GET['url'], '/'), FILTER_SANITIZE_URL) );
 		}

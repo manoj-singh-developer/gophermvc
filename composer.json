@@ -6,6 +6,12 @@
 		"psr-4": {
 			"SMVC\\": "app/lib"
 		}
+	},
+	
+	"require": {
+    	"owasp/phprbac": "2.0.*@dev",
+		"mailchimp/mailchimp": "^2.0",
+		"campaignmonitor/createsend-php": "^5.0"
 	}
 	
 }

@@ -7,7 +7,7 @@ class BaseController{
 	{
 		if($returnArray === false)//Default set site defined values
 		{
-			//$this->setSiteSettings();
+			$this->setSiteSettings();
 			return;
 		}
 		
@@ -54,7 +54,11 @@ class BaseController{
 		$environment = $this->getEnvironmentValues();
 		
 		array_walk($environment, function($value, $key){
-			define($this->formatConstantKey($key), $value);
+			if(!empty($value) )
+			{
+				define($this->formatConstantKey($key), $value);
+				putenv($this->formatConstantKey($key)."=".$value);
+			}
 		});
 		
 		return;
