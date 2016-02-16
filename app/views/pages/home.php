@@ -1,4 +1,8 @@
 <?php
+use SMVC\PayMethods\PayMethodBase;	
+use SMVC\SecureSite\SecureSiteBase;	
+
+
 /***************************************************************************/	
 ob_start();
 
@@ -47,12 +51,44 @@ ob_start();
 		  	
 	      </div>
 	    </div><!-- End Panel -->
+	    
+	    
+	<div class="panel panel-default">
+	  <div class="panel-heading"> Emailer  </div>
+	  <div class="panel-body">
+		  <p>
+			  Mailchimp is currently installed as a dependancy and with an 'INTERFACE' found at SMVC\Emails\
+		  </p>
+		  
+	  </div>
+	</div>	    
+
+<div class="panel panel-default">
+  <div class="panel-heading"> Login / Security </div>
+  <div class="panel-body"> 
+	  <p>
+		  
+	  </p>
+	  
+	  <?php
+		  $forms = new SecureSiteBase();
+		  $forms->setFramework(new SMVC\SecureSite\Bootstrap\SecurityForms);
+		  
+		  
+		  echo $forms->loginForm();
+		  echo '<hr>'.$forms->passwordReminderForm();
+		  echo '<hr>'.$forms->signupForm();
+		  
+		?>
+  </div>
+</div>
+
       
     </div><!-- end col -->
     <div class="col-sm-6" >
       
       
-      	    <div class="panel panel-default">
+      	<div class="panel panel-default">
 	      <div class="panel-heading">A dump of data passed to this page from its controller</div>
 	      <div class="panel-body">
 		      <pre>
@@ -62,7 +98,7 @@ ob_start();
 	    </div><!-- End Panel -->
       
       
-          <div class="panel panel-default">
+    <div class="panel panel-default">
        <div class="panel-heading"> Composer </div>
        <div class="panel-body">
 	       <p>
@@ -77,7 +113,7 @@ ob_start();
      </div><!-- End Panel --> 
       
       
-           <div class="panel panel-default">
+    <div class="panel panel-default">
        <div class="panel-heading">  Templates </div>
        <div class="panel-body"> 
 	       <p>
@@ -85,7 +121,19 @@ ob_start();
 	       </p>
 	    </div>
      </div> <!-- End Panel -->
-      
+     
+     
+	<div class="panel panel-default">
+	  <div class="panel-heading"> Payment Methods </div>
+	  <div class="panel-body"> 
+		  <ul>
+			  <li>Sage Pay -- <?=(new PayMethodBase( new SMVC\PayMethods\Sagepay\Transactions ) )->takePayment()?></li>
+			  <li>World Pay -- <?=(new PayMethodBase( new SMVC\PayMethods\Worldpay\Transactions ) )->takePayment()?></li>
+			  <li>PayPal -- <?=(new PayMethodBase( new SMVC\PayMethods\Worldpay\Transactions ) )->takePayment()?></li>
+		  </ul>
+		  
+	  </div>
+	</div>  
       
     </div><!-- end col -->	
 </div><!-- End row -->

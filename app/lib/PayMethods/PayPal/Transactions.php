@@ -1,6 +1,7 @@
 <?php
-namespace SMVC\PayMethods\Sagepay;
+namespace SMVC\PayMethods\PayPal;
 use SMVC\PayMethods\PayMethodInterface;
+
 
 class Transactions implements PayMethodInterface {
 

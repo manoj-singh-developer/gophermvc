@@ -2,7 +2,7 @@
 namespace SMVC\SecureSite;
 use \PDO;
 
-class LoginStatus extends SecureSiteController {
+class LoginStatus extends SecureSiteBase {
 	
 	public $status = false;
 /****************************************************************************/

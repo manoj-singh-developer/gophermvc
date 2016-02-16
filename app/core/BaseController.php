@@ -5,7 +5,7 @@ class BaseController{
 /***************************************************************************/
 	function __construct( $returnArray = false )
 	{
-		if($returnArray === false)//Default set site defined values
+		if($returnArray === false && NO_DB !== true )
 		{
 			$this->setSiteSettings();
 			return;
@@ -17,6 +17,7 @@ class BaseController{
 /***************************************************************************/
 	protected function getEnvironmentValues( $includeAllValues = false )
 	{
+
 		$data = array();
 		
 		$params = array();
@@ -76,6 +77,7 @@ class BaseController{
 
 		return $formattedEnvironmentValues;
 	}
+
 /***************************************************************************/
 	protected function formatConstantKey( $key = null )
 	{

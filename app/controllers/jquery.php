@@ -20,7 +20,7 @@ class Jquery extends Controller
 	public function getbiometric( $id )
 	{
 		/** Call View and pass values **/
-		$this->view('ajax/json', 
+		$this->view('rtnData/json', 
 					array(
 						'json' => (new BioController)->getBiometricMasterData( $id ),
 					)
@@ -32,7 +32,7 @@ class Jquery extends Controller
 		extract($_POST);
 		( new AppSettings )->updateSettings( $id, $value );
 		
-		$this->view('ajax/json', 
+		$this->view('rtnData/json', 
 					array(
 						'json' => array('success' => 'success update', 'id'=> $id, 'value'=> $_POST['value']),
 					)
@@ -43,7 +43,7 @@ class Jquery extends Controller
 	{
 		( new AppSettings )->resetSetting( $id );
 		
-		$this->view('ajax/json', 
+		$this->view('rtnData/json', 
 					array(
 						'json' => array('success' => 'success reset', 'id'=> $id, ),
 					)

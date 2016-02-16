@@ -1,5 +1,5 @@
 <?php
-	/**
+/**
 	Login class.
 	Logging in sets two $_SESSION varibles
 	$_SESSION['user_id'], $_SESSION['loginString']
@@ -10,23 +10,30 @@
 	
 	Loging out: logoutSession()
 	
-		
-	**/
+**/
 namespace SMVC\SecureSite;
 use \PDO;
 	
-class SecureSiteController {
+class SecureSiteBase {
 	protected $hash = 'sha512';
-	protected $formFieldName = 'userName';
-	protected $formFieldPassword = 'password';
+
+//Form input ID's	
+	protected $emailID = 'emailAddress';
+	protected $passwordID = 'password';
+	protected $firstNameID = 'firstName';
+	protected $lastNameID = 'lastName';
+	
+	
 	protected $testUsername = 'tony';
 	protected $testPassword = 'tony';
-	protected $inactiveInterval = 500;//Hours inactive before required to log back in
 	
+	protected $inactiveInterval = 500;//Hours inactive before required to log back in. See config for override
+		
+	public $outputs = array();//Log of SecureSite class activity - use to debug
+
+	protected $LoginStatus = false;//Default login status
 	
-	public $outputs = array();
-	protected $LoginStatus = false;
-	
+	protected $framework;//Object for interface
 	
 /****************************************************************************/
 	public function __construct()
@@ -51,6 +58,30 @@ class SecureSiteController {
 	
 	}
 /****************************************************************************/
+
+	public function setFramework( SecureSiteInterface $framework)
+	{
+		$this->framework = $framework;
+	}
+/****************************************************************************/
+
+	public function loginForm()
+	{
+		return $this->framework->loginForm($this->emailID, $this->passwordID);
+	}
+/****************************************************************************/
+	
+	public function passwordReminderForm()
+	{
+		return $this->framework->passwordReminderForm($this->emailID);
+	}
+/****************************************************************************/
+	
+	public function signupForm()
+	{
+		return $this->framework->signupForm($this->emailID, $this->passwordID, $this->firstNameID, $this->lastNameID );
+	}
+/****************************************************************************/
 	protected function compareStrings( $s1 = '', $s2 = '')
 	{
 		return ($s1 == $s2);
@@ -64,9 +95,7 @@ class SecureSiteController {
 	}
 /****************************************************************************/
 	protected function logBruteForceAttempt()
-	{
-		
-		
+	{	
 	}
 /****************************************************************************/
 /**
@@ -74,7 +103,6 @@ class SecureSiteController {
 **/
 	public function getSalt()
 	{
-		
 	    $random_salt = hash('sha512', uniqid(mt_rand(1, mt_getrandmax()), true));
 		$this->outputs[__FUNCTION__]  = __LINE__;
 		$this->outputs['new_salt'] = $random_salt;
@@ -108,7 +136,6 @@ class SecureSiteController {
 
 	protected function getLoginString( $user_id = '', $salt = '' )
 	{
-		
 		$string = $user_id.$_SERVER['HTTP_USER_AGENT'].( $salt ? $salt : $this->newSalt() );
 	
 	/** Activity log **/	
@@ -120,7 +147,6 @@ class SecureSiteController {
 /**		Connect to database, PDO 	**/
 	protected function db_conection()
 	{
-		
 		$conn = '';
 	
 		try{
@@ -158,28 +184,4 @@ class SecureSiteController {
 		return;
 	}	
 /****************************************************************************/
-/****************************************************************************/
-	public function newUserForm()
-	{
-		ob_start();
-		?>
-		
-		<form role="form" action="" method="post" id="newUser" name="newUser">
-			<div class="form-group">
-				<label for="email">Email:</label>
-				<input type="text" class="form-control" id="<?=$this->formFieldName?>" name="<?=$this->formFieldName?>" value="">
-			</div>
-				
-			<button type="submit" class="btn btn-default" id="forgotEmailBtn" name="forgotEmailBtn">Add user</button>
-			
-		</form>
-		
-		<?php
-		$content = ob_get_contents();
-		ob_end_clean();
-		return $content;
-	}
-/****************************************************************************/
-/****************************************************************************/	
-/****************************************************************************/	
 }//End Class Security	

@@ -32,7 +32,8 @@ class App extends BaseController{
 		
 		//Method
 		if( isset($url[1]) ){
-			if( method_exists($this->controller, $url[1]) ){
+			$url[1] = str_replace('.','_',$url[1]);
+			if( method_exists($this->controller, $url[1] ) ){//Replace output.pdf as output_pdf
 				$this->method = $url[1];
 				unset($url[1]);
 			}

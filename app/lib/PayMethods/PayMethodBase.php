@@ -1,19 +1,19 @@
 <?php
 namespace SMVC\PayMethods;
+//use SMVC\PayMethods\PayMethodInterface;
 
-
-class PayMethodController {
+class PayMethodBase {
 	protected $paymentMethod;
 	
 /******************************************************************/
-	public function __construct( PayMethodsInterface $paymentMethod)
+	public function __construct( PayMethodInterface $paymentMethod)
 	{
 		$this->paymentMethod = $paymentMethod;	
 	}
 /******************************************************************/
 	public function takePayment(){
 		
-		
+		return $this->paymentMethod->takePayment();
 	}
 /******************************************************************/
 	
@@ -29,7 +29,4 @@ class PayMethodController {
 		
 	}
 /******************************************************************/
-/******************************************************************/
-/******************************************************************/
-	
 }

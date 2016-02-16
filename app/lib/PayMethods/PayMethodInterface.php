@@ -1,7 +1,7 @@
 <?php
 namespace SMVC\PayMethods;
 
-interface PayMethodsInterface{
+interface PayMethodInterface{
 	
 	public function takePayment();
 	public function refundPayment();

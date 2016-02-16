@@ -1,11 +1,11 @@
 Options -MultiViews
-
+#Move this file to public/
 
 RewriteEngine On
 
-#RewriteBase /fitnessDiary/public/
+#Edit to reflect your root dir. /public might be enough. 500 server errors appear if this is not set correctly
 #RewriteBase /public
-RewriteBase /smvc/public/
+RewriteBase /gophermvc/public/
 
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f

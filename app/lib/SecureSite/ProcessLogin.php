@@ -1,11 +1,12 @@
 <?php
-namespace SMVC\SecureSite;	
+namespace SMVC\SecureSite;
+use \PDO;
 
 
-class ProcessLogin extends SecureSiteController{
+class ProcessLogin extends SecureSiteBase{
 
 /****************************************************************************/
-	public function __construct( $data = array() )
+	public function loggedIn( $data = array() )
 	{
 		/**
 			$data array(
@@ -15,6 +16,7 @@ class ProcessLogin extends SecureSiteController{
 			
 		**/
 		parent::__construct();
+
 		return $this->processLoginRequest($data);
 	}
 /****************************************************************************/
@@ -31,7 +33,7 @@ class ProcessLogin extends SecureSiteController{
 			
 		/** Query database and return row based on $_SESSION['user_id'] **/	
 			$sql = " SELECT *, DATE_SUB(NOW(), INTERVAL ".$this->inactiveInterval." HOUR) as testTime FROM ".DB_PREFIX."users WHERE username = :username  AND active = 1 ; ";
-			$params = array(':username' => $_POST[$this->formFieldName]);
+			$params = array(':username' => $data[$this->emailID]);
 		
 			try
 			{
@@ -48,7 +50,7 @@ class ProcessLogin extends SecureSiteController{
 					$this->outputs['user details'] = $row;
 					
 		/** Hash password and compare with database password **/
-					$pw = $this->hashString( $_POST[$this->formFieldPassword].$salt );
+					$pw = $this->hashString( $data[$this->passwordID].$salt );
 					
 		/** Activity log **/		
 					$this->outputs['DB password'] = $password;
