@@ -1,8 +1,8 @@
 <?php
-namespace SMVC\Emails;
+namespace Acme\Emails;
 //use Mailchimp;
 
-class EmailController{
+class EmailBase{
 	
 	protected $mailer;
 	public $emailErrors;

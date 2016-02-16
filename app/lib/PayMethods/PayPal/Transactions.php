@@ -1,6 +1,6 @@
 <?php
-namespace SMVC\PayMethods\PayPal;
-use SMVC\PayMethods\PayMethodInterface;
+namespace Acme\PayMethods\PayPal;
+use Acme\PayMethods\PayMethodInterface;
 
 
 class Transactions implements PayMethodInterface {

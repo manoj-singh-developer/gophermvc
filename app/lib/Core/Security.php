@@ -12,7 +12,7 @@
 	
 		
 	**/
-namespace SMVC\Core;
+namespace Acme\Core;
 use \PDO;
 	
 class Security {

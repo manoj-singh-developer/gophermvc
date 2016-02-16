@@ -1,7 +1,7 @@
 <?php
 	
-namespace SMVC\Emails\Mailchimp;
-use SMVC\Emails\EmailInterface;
+namespace Acme\Emails\Mailchimp;
+use Acme\Emails\EmailInterface;
 use Mailchimp;
 
 /**

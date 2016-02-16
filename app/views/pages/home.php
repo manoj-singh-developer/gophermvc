@@ -1,6 +1,6 @@
 <?php
-use SMVC\PayMethods\PayMethodBase;	
-use SMVC\SecureSite\SecureSiteBase;	
+use Acme\PayMethods\PayMethodBase;	
+use Acme\SecureSite\SecureSiteBase;	
 
 
 /***************************************************************************/	
@@ -57,7 +57,7 @@ ob_start();
 	  <div class="panel-heading"> Emailer  </div>
 	  <div class="panel-body">
 		  <p>
-			  Mailchimp is currently installed as a dependancy and with an 'INTERFACE' found at SMVC\Emails\
+			  Mailchimp is currently installed as a dependancy and with an 'INTERFACE' found at Acme\Emails\
 		  </p>
 		  
 	  </div>
@@ -72,7 +72,7 @@ ob_start();
 	  
 	  <?php
 		  $forms = new SecureSiteBase();
-		  $forms->setFramework(new SMVC\SecureSite\Bootstrap\SecurityForms);
+		  $forms->setFramework(new Acme\SecureSite\Bootstrap\SecurityForms);
 		  
 		  
 		  echo $forms->loginForm();
@@ -127,9 +127,9 @@ ob_start();
 	  <div class="panel-heading"> Payment Methods </div>
 	  <div class="panel-body"> 
 		  <ul>
-			  <li>Sage Pay -- <?=(new PayMethodBase( new SMVC\PayMethods\Sagepay\Transactions ) )->takePayment()?></li>
-			  <li>World Pay -- <?=(new PayMethodBase( new SMVC\PayMethods\Worldpay\Transactions ) )->takePayment()?></li>
-			  <li>PayPal -- <?=(new PayMethodBase( new SMVC\PayMethods\Worldpay\Transactions ) )->takePayment()?></li>
+			  <li>Sage Pay -- <?=(new PayMethodBase( new Acme\PayMethods\Sagepay\Transactions ) )->takePayment()?></li>
+			  <li>World Pay -- <?=(new PayMethodBase( new Acme\PayMethods\Worldpay\Transactions ) )->takePayment()?></li>
+			  <li>PayPal -- <?=(new PayMethodBase( new Acme\PayMethods\Worldpay\Transactions ) )->takePayment()?></li>
 		  </ul>
 		  
 	  </div>

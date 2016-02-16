@@ -1,5 +1,5 @@
 <?php
-namespace SMVC\Core;
+namespace Acme\Core;
 	
 class DataTable{
 	protected $table = array();

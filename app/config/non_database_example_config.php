@@ -41,7 +41,7 @@ define('MAILCHIMP_APIKEY', 'a6db84dc204d4720c0c450a0bbac5b4f-us12');
 /***********************************************************/	
 /**************** Nothing to change below ******************/
 
-define('ROOT_NAMESPACE', 'SMVC');	
+define('ROOT_NAMESPACE', 'Acme');	
 define('ROOT', $cfg['base_url'] );
 define('DEBUG', $cfg['debug'] );
 define('HASH_TYPE', 'sha512');

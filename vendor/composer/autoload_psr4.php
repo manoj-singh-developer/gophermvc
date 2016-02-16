@@ -6,5 +6,5 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'SMVC\\' => array($baseDir . '/app/lib'),
+    'Acme\\' => array($baseDir . '/app/lib'),
 );

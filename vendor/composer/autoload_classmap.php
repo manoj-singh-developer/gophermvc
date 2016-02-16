@@ -6,9 +6,9 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Acme\\Core\\DbConnect' => $baseDir . '/app/core/DbConnect.php',
     'App' => $baseDir . '/app/core/App.php',
     'AppSettings' => $baseDir . '/app/core/AppSettings.php',
     'BaseController' => $baseDir . '/app/core/BaseController.php',
     'Controller' => $baseDir . '/app/core/Controller.php',
-    'SMVC\\Core\\DbConnect' => $baseDir . '/app/core/DbConnect.php',
 );

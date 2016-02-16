@@ -1,5 +1,5 @@
 <?php
-namespace SMVC\Emails;
+namespace Acme\Emails;
 
 interface EmailInterface{
 	

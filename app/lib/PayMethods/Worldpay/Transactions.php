@@ -1,6 +1,6 @@
 <?php
-namespace SMVC\PayMethods\Worldpay;
-use SMVC\PayMethods\PayMethodInterface;
+namespace Acme\PayMethods\Worldpay;
+use Acme\PayMethods\PayMethodInterface;
 
 
 class Transactions implements PayMethodInterface {

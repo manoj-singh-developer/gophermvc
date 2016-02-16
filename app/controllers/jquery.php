@@ -1,7 +1,7 @@
 <?php
 	
-use SMVC\Core\DbConnect;
-use SMVC\Biometrics\BioController;
+use Acme\Core\DbConnect;
+use Acme\Biometrics\BioController;
 
 /**
 	

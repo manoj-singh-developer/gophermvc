@@ -1,6 +1,6 @@
 <?php
-namespace SMVC\PayMethods;
-//use SMVC\PayMethods\PayMethodInterface;
+namespace Acme\PayMethods;
+//use Acme\PayMethods\PayMethodInterface;
 
 class PayMethodBase {
 	protected $paymentMethod;

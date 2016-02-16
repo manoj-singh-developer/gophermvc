@@ -1,6 +1,6 @@
 <?php
-use SMVC\Core\DbConnect;
-use SMVC\Core\Security;
+use Acme\Core\DbConnect;
+use Acme\Core\Security;
 
 /**
 	

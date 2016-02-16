@@ -11,7 +11,7 @@
 	Loging out: logoutSession()
 	
 **/
-namespace SMVC\SecureSite;
+namespace Acme\SecureSite;
 use \PDO;
 	
 class SecureSiteBase {

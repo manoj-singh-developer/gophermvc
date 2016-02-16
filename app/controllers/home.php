@@ -1,5 +1,5 @@
 <?php
-use SMVC\Core\Security;
+use Acme\Core\Security;
 
 class Home extends Controller
 {

@@ -1,6 +1,6 @@
 <?php
-namespace SMVC\SecureSite\Bootstrap;
-use SMVC\SecureSite\SecureSiteInterface;	
+namespace Acme\SecureSite\Bootstrap;
+use Acme\SecureSite\SecureSiteInterface;	
 
 
 class SecurityForms implements SecureSiteInterface{

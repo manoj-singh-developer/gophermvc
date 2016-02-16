@@ -1,5 +1,5 @@
 <?php
-header('Content-Type: text/xml');
+header('Content-Type: text/plain');
 extract($data);	
 if( !empty( $content ) )
 {

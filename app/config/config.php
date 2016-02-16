@@ -26,7 +26,7 @@ switch( $_SERVER['SERVER_NAME'] ){
 /***********************************************************/	
 /**************** Nothing to change below ******************/
 
-define('ROOT_NAMESPACE', 'SMVC');	
+define('ROOT_NAMESPACE', 'Acme');	
 define('ROOT', $cfg['base_url'] );
 define('DEBUG', $cfg['debug'] );
 define('NO_DB', ($cfg['dont_use_database'] == true ? true : false) );

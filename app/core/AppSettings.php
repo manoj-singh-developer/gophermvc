@@ -1,5 +1,5 @@
 <?php
-use SMVC\Core\DbConnect;
+use Acme\Core\DbConnect;
 
 class AppSettings {
 

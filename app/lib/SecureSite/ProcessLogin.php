@@ -1,5 +1,5 @@
 <?php
-namespace SMVC\SecureSite;
+namespace Acme\SecureSite;
 use \PDO;
 
 

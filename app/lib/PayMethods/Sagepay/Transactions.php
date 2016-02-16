@@ -1,6 +1,6 @@
 <?php
-namespace SMVC\PayMethods\Sagepay;
-use SMVC\PayMethods\PayMethodInterface;
+namespace Acme\PayMethods\Sagepay;
+use Acme\PayMethods\PayMethodInterface;
 
 class Transactions implements PayMethodInterface {
 

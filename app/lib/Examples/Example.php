@@ -1,6 +1,6 @@
 <?php
-namespace SMVC\Biometrics;
-use SMVC\Core\DbConnect;
+namespace Acme\Biometrics;
+use Acme\Core\DbConnect;
 use PDO;
 use Exception;
 

@@ -1,5 +1,5 @@
 <?php
-namespace SMVC\PayMethods;
+namespace Acme\PayMethods;
 
 interface PayMethodInterface{
 	

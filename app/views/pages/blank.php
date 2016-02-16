@@ -1,6 +1,6 @@
 <?php
-use SMVC\PayMethods\PayMethodBase;	
-use SMVC\SecureSite\SecureSiteBase;	
+use Acme\PayMethods\PayMethodBase;	
+use Acme\SecureSite\SecureSiteBase;	
 
 
 /***************************************************************************/	
